@@ -1,15 +1,32 @@
-// This is a "stub" file.  It's a little start on your solution.
-// It's not a complete solution though; you have to write some code.
-
-// Package bob should have a package comment that summarizes what it's about.
-// https://golang.org/doc/effective_go.html#commentary
+/*
+Package bob solves the exercism Go: bob problem
+*/
 package bob
 
-// Hey should have a comment documenting it.
+import "strings"
+
+// Hey returns lackadaisical teenager response to an input
 func Hey(remark string) string {
-	// Write some code here to pass the test suite.
-	// Then remove all the stock comments.
-	// They're here to help you get started but they only clutter a finished solution.
-	// If you leave them in, reviewers may protest!
-	return ""
+	rem := strings.TrimSpace(remark)
+	switch {
+	case containsAlphabetCharacter(rem) && remark == strings.ToUpper(rem):
+		if strings.HasSuffix(rem, "?") {
+			return "Calm down, I know what I'm doing!"
+		}
+		return "Whoa, chill out!"
+	case strings.HasSuffix(rem, "?"):
+		return "Sure."
+	case "" == rem:
+		return "Fine. Be that way!"
+	}
+	return "Whatever."
+}
+
+func containsAlphabetCharacter(s string) bool {
+	for _, r := range s {
+		if (r >= 'a' && r <= 'z') || (r >= 'A' && r <= 'Z') {
+			return true
+		}
+	}
+	return false
 }
