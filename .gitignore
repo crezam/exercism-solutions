@@ -30,3 +30,6 @@ Temporary Items
 # Jetbrains
 .idea
 *.iml
+
+# Exercism meta
+.solution.json
