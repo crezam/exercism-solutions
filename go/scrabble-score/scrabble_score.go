@@ -21,6 +21,5 @@ func Score(input string) int {
 }
 
 func charValue(i rune) int {
-	i = unicode.ToLower(i)
 	return int(charValues[i-'a'])
 }
