@@ -2,9 +2,6 @@ package diffsquares
 
 // SumOfSquares returns sum of squares
 func SumOfSquares(n int) int {
-	if n < 1 {
-		panic("number needs to be natural (n > 0)")
-	}
 	sum := 1
 	for i := 2; i <= n; i++ {
 		sum += i * i
@@ -14,9 +11,6 @@ func SumOfSquares(n int) int {
 
 // SquareOfSums returns square of sums
 func SquareOfSums(n int) int {
-	if n < 1 {
-		panic("number needs to be natural (n > 0)")
-	}
 	sum := n * (n + 1) / 2
 	return sum * sum
 }
