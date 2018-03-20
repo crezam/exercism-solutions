@@ -8,9 +8,9 @@ import (
 // Square returns the number of grains in the input square position (starting by !)
 func Square(input int) (actualVal uint64, actualErr error) {
 	if input < 1 || input > 64 {
-		actualVal, actualErr = 0, errors.New("input should be between 1 and 64 inclusive")
+		actualErr = errors.New("input should be between 1 and 64 inclusive")
 	} else {
-		actualVal, actualErr = uint64(math.Pow(float64(2), float64(input-1))), nil
+		actualVal = uint64(math.Pow(float64(2), float64(input-1)))
 	}
 	return
 }
